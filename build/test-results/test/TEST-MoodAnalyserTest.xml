@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MoodAnalyserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-11-25T05:37:06" hostname="admin1-desktop" time="0.006">
+<testsuite name="MoodAnalyserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-11-25T07:52:06" hostname="admin1-desktop" time="0.002">
   <properties/>
   <testcase name="giveNullPointException" classname="MoodAnalyserTest" time="0.001"/>
   <testcase name="givenMessage_WhenSad_ShouldReturnSad" classname="MoodAnalyserTest" time="0.0"/>
-  <testcase name="givenMessage_WhenHappy_ShouldReturn" classname="MoodAnalyserTest" time="0.0"/>
+  <testcase name="givenMessage_WhenHappy_ShouldReturn" classname="MoodAnalyserTest" time="0.001"/>
+  <testcase name="givenMoodAnalyserClassWhenProperShouldReturnObject" classname="MoodAnalyserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
