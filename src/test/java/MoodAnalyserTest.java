@@ -28,25 +28,28 @@ public class MoodAnalyserTest {
         Assert.assertEquals("HAPPY",mood);
     }
 
-    @Test
-    public void giveNullPointException() {
-        MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalyser(null);
-        String mood = null;
-        try {
-            mood = moodAnalyser.analyseMood(null);
-        } catch (MoodAnalyserException e) {
-            Assert.assertEquals("Please enter proper message",e.getMessage());
-        }
-    }
 
     @Test
     public void givenMoodAnalyserClassWhenProperShouldReturnObject() {
         MoodAnalyser moodAnalyser = MoodAnalyserFactory.createMoodAnalyser("I am in happy mood");
+        Assert.assertEquals(new MoodAnalyser("I am in happy mood"),moodAnalyser);
+    }
+
+    @Test
+    public void givenNullMoodShouldThrowException() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
         try {
-            String mood = moodAnalyser.analyseMood();
-            Assert.assertEquals("HAPPY",mood);
+            moodAnalyser.analyseMood(null);
         } catch (MoodAnalyserException e) {
-            e.printStackTrace();
+            Assert.assertEquals(MoodAnalyserException.ExceptionType.ENTERED_NULL,e.type);
         }
+    }
+
+
+    @Test
+    public void givenObject_WhenCorrect_ReturnsInfoUsingReflection()
+    {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        ObjectReflector.dump(moodAnalyser,3);
     }
 }
